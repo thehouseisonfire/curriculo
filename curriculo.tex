@@ -4,12 +4,15 @@
 % License: CC-BY-4
 % - https://creativecommons.org/licenses/by/4.0/legalcode.txt
 %%%%
+
 \documentclass[a4paper,10pt]{article}
+
 %%%%%%%%%%%%%%%%%%%%%%%
 %% BEGIN_FILE: mteck.sty
 %% NOTE: Everything between here and END_FILE can
 %% be relocated to "mteck.sty" and then included with:
-%\usepackage{mteck}
+% \usepackage{mteck}
+
 % Dependencies
 % NOTE: Some packages (lastpage, hyperref) require second build!
 \usepackage[empty]{fullpage}
@@ -24,14 +27,17 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
+
 % Sans-Serif
-%\usepackage[sfdefault]{FiraSans}
-%\usepackage[sfdefault]{roboto}
-%\usepackage[sfdefault]{noto-sans}
-%\usepackage[default]{sourcesanspro}
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
 % Serif
 \usepackage{CormorantGaramond}
 \usepackage{charter}
+
 % Colors
 % Use with \color{Name}
 % Can wrap entire heading with {\color{accent} [...] }
@@ -39,6 +45,7 @@
 \definecolor{accentTitle}{HTML}{0e6e55}
 \definecolor{accentText}{HTML}{0e6e55}
 \definecolor{accentLine}{HTML}{a16f0b}
+
 % Misc. Options
 \pagestyle{fancy}
 \fancyhf{}
@@ -46,6 +53,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 \urlstyle{same}
+
 % Adjust Margins
 \addtolength{\oddsidemargin}{-0.7in}
 \addtolength{\evensidemargin}{-0.5in}
@@ -58,12 +66,15 @@
 \setlength{\footskip}{3.7pt}
 \raggedbottom
 \raggedright
+
 % ATS Readability
 \input{glyphtounicode}
 \pdfgentounicode=1
+
 %-----------------%
 % Custom Commands %
 %-----------------%
+
 % Centered title along with subtitle between HR
 % Usage: \documentTitle{Name}{Details}
 \newcommand{\documentTitle}[2]{
@@ -72,24 +83,27 @@
 \vspace{10pt}
 {\color{accentLine} \hrule}
 \vspace{2pt}
-%{\footnotesize\color{accentTitle} #2}
+% {\footnotesize\color{accentTitle} #2}
 \footnotesize{#2}
 \vspace{2pt}
 {\color{accentLine} \hrule}
 \end{center}
 }
+
 % Create a footer with correct padding
 % Usage: \documentFooter{\thepage of X}
 \newcommand{\documentFooter}[1]{
 \setlength{\footskip}{10.25pt}
 \fancyfoot[C]{\footnotesize #1}
 }
+
 % Simple wrapper to set up page numbering
 % Usage: \numberedPages
 % WARNING: Must run pdflatex twice!
 \newcommand{\numberedPages}{
 \documentFooter{\thepage/\pageref{LastPage}}
 }
+
 % Section heading with horizontal rule
 % Usage: \section{Title}
 \titleformat{\section}{
@@ -97,6 +111,7 @@
 \color{accentText}
 \raggedright\large\bfseries
 }{}{0em}{}[\color{accentLine}\titlerule]
+
 % Section heading with separator and content on same line
 % Usage: \tinysection{Title}
 \newcommand{\tinysection}[1]{
@@ -104,19 +119,23 @@
 \addcontentsline{toc}{section}{#1}
 {\large{\bfseries\color{accentText}#1} {\color{accentLine} |}}
 }
+
 % Indented line with arguments left/right aligned in document
 % Usage: \heading{Left}{Right}
 \newcommand{\heading}[2]{
 \hspace{10pt}#1\hfill#2\\
 }
+
 % Adds \textbf to \heading
 \newcommand{\headingBf}[2]{
 \heading{\textbf{#1}}{\textbf{#2}}
 }
+
 % Adds \textit to \heading
 \newcommand{\headingIt}[2]{
 \heading{\textit{#1}}{\textit{#2}}
 }
+
 % Template for itemized lists
 % Usage: \begin{resume_list} [items] \end{resume_list}
 \newenvironment{resume_list}{
@@ -124,31 +143,39 @@
 \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=30pt]
 }{
 \end{itemize}
-%\vspace{-2pt}
+% \vspace{-2pt}
 }
+
 % Formats an item to use as an itemized title
 % Usage: \itemTitle{Title}
 \newcommand{\itemTitle}[1]{
 \item[] \underline{#1}\vspace{4pt}
 }
+
 % Bullets used in itemized lists
 \renewcommand\labelitemi{--}
+
 %% END_FILE: mteck.sty
 %%%%%%%%%%%%%%%%%%%%%%
-%===================%
-% John Doe's Resume %
-%===================%
-%\numberedPages % NOTE: lastpage requires a second build
-%\documentFooter{\thepage of 2} % Does similar without using lastpage
+
+%========================%
+% Pedro Spegiorin Resume %
+%========================%
+
+% \numberedPages % NOTE: lastpage requires a second build
+% \documentFooter{\thepage of 2} % Does similar without using lastpage
+
 \begin{document}
+
 %---------%
 % Heading %
 %---------%
+
 \documentTitle{Pedro Spegiorin}{
 % Web Version
-%\raisebox{-0.05\height} \faPhone\ [redacted - web copy] ~
-%\raisebox{-0.15\height} \faEnvelope\ [redacted - web copy] ~
-%%
+% \raisebox{-0.05\height} \faPhone\ [redacted - web copy] ~
+% \raisebox{-0.15\height} \faEnvelope\ [redacted - web copy] ~
+%
 \href{tel:55999118330}{
 \raisebox{-0.05\height} \faPhone\ (55) 49 99911-8330} ~ | ~
 \href{mailto:pedrospegiorindev36@gmail.com}{
@@ -156,90 +183,115 @@
 \href{https://github.com/thehouseisonfire}{
 \raisebox{-0.15\height} \faGithub\ github.com/thehouseisonfire}
 }
-%---------%
-% Summary %
-%---------%
+
+%--------%
+% Perfil %
+%--------%
+
 \tinysection{Quem Sou Eu}
-Desenvolvedor Full Stack, Mantenedor Open Source, Estudante em Ciências da Computação e Programador Competitivo
+Desenvolvedor Full Stack, mantenedor de projetos Open Source, estudante de Ciência da Computação e programador competitivo.
+
 %--------%
 % Skills %
 %--------%
-\section{Habilidades}
-%\begin{multicols}{2}
-\begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=75pt]
-\item[\textbf{Idiomas}] Inglês (Fluente)
-\item[\textbf{Linguagens}] Rust, Javascript/Typescript, C++, Python, SQL, Bash
-\item[\textbf{Frameworks}] React, Next.js, Tanstack, Vue.js, Nuxt
-\item[\textbf{OS}] Arch, Ubuntu, Mint
-\item[\textbf{Ferramentas}] Git,  Github CD/CI, Docker, Docker Compose, Supabase, Firebase, Vim
 
+\section{Habilidades}
+
+% \begin{multicols}{2}
+\begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=105pt]
+\item[\textbf{Idiomas}] Inglês (fluente)
+\item[\textbf{Linguagens}] Rust, JavaScript/TypeScript, C++, Python, SQL, Bash
+\item[\textbf{Frameworks}] React, Next.js, TanStack, Vue.js, Nuxt
+\item[\textbf{Sistemas Operacionais}] Arch Linux, Ubuntu, Linux Mint
+\item[\textbf{Ferramentas}] Git, GitHub CI/CD, Docker, Docker Compose, Supabase, Firebase, Vim
 \end{itemize}
-%\end{multicols}
+% \end{multicols}
+
 %------------%
 % Experience %
 %------------%
 
 \section{Experiência}
-\headingBf{Desenvolvedor Júnior - Difrisul Distribuidora Chapecó}{Feb 2025 - Jul 2026}
+
+\headingBf{Desenvolvedor Júnior -- Difrisul Distribuidora Chapecó}{Fev 2025 -- Jul 2026}
 \begin{resume_list}
-\item Desenvolvi uma aplicação e-commerce para a distribuidora, utlizando Next.js, Supabase, Medusa.js, Shadcn/Tailwindss v4 e a SDK do Mercado Pago. Também desenvolvi o começo de um aplicativo mobile para o site
-\item Desenvolvi um script para junção de rotas apartir de arquivo excel em python, compilavel para Windows
-\item Desenvolvi um script para filtragem e validação de números de telefone apartir de arquivo excel em python, compilavel para Windows
+\item Desenvolvi uma aplicação de e-commerce para a distribuidora utilizando Next.js, Supabase, Medusa.js, shadcn/ui, Tailwind CSS v4 e a SDK do Mercado Pago. Também iniciei o desenvolvimento de um aplicativo mobile integrado à plataforma.
+\item Desenvolvi um script em Python para junção de rotas a partir de arquivos Excel, com geração de executável para Windows.
+\item Desenvolvi um script em Python para filtragem e validação de números de telefone a partir de arquivos Excel, com geração de executável para Windows.
 \end{resume_list}
 
-\headingBf{Desenvolvedor Júnior - Weplan Movéis Planejados}{Ago 2023 - Feb 2025}
+\headingBf{Desenvolvedor Júnior -- Weplan Móveis Planejados}{Ago 2023 -- Fev 2025}
 \begin{resume_list}
-\item Desenvolvi atualizações para o site da empresa que estava em vigor, renovando seu estilo e conteúdo
-\item Atualizei toda a stack do site, incluindo uma migração de Vue 2 para Nuxt 3
-\item Desenvolvi um novo site apartir de zero, utilizando Tailwindcss e Nuxt 3
-\item Implementei diversas novas funcionalidades, consertos e politicas para a ferramenta interna de cálculo de geração de contrato da empresa. Entre estas posso citar a persistência de dados entre telas, cálculo inverso apartir de um valor final, validação de dados, engenharia reversa dos artefatos do CAD de gerenciamento de ambientes planejados PROMOB e extração de dados diretamente do XMl resultante, apoio a calculo de múltiplos ambientes por contrato, otimização de 10x na criação do contrato, concatenação de PDFs, e diversos bugs e erros lógicos
-\item Atualizei toda a stack da ferramenta interna, incluindo uma migração de Vue 2 para Nuxt 3, uma nova versão do Vuetify, e novas versões das bibliotecas de desenvolvimento do Firebase
-
+\item Desenvolvi atualizações para o site da empresa em produção, renovando seu estilo e conteúdo.
+\item Atualizei toda a stack do site, incluindo a migração de Vue 2 para Nuxt 3.
+\item Desenvolvi um novo site do zero utilizando Tailwind CSS e Nuxt 3.
+\item Implementei diversas funcionalidades, correções e políticas para a ferramenta interna de cálculo e geração de contratos da empresa. Entre elas, persistência de dados entre telas, cálculo inverso a partir de um valor final, validação de dados, engenharia reversa de artefatos do software CAD PROMOB e extração de dados diretamente do XML resultante, suporte ao cálculo de múltiplos ambientes por contrato, otimização de aproximadamente 10x na criação de contratos, concatenação de PDFs e correção de diversos bugs e erros lógicos.
+\item Atualizei toda a stack da ferramenta interna, incluindo a migração de Vue 2 para Nuxt 3, uma nova versão do Vuetify e atualizações das bibliotecas de desenvolvimento do Firebase.
 \end{resume_list}
+
+%------------%
+% Activities %
+%------------%
 
 \section{Atividades}
 
-\headingBf{Programação Competitiva}{2023 - Presente}
+\headingBf{Programação Competitiva}{2023 -- Presente}
 \begin{resume_list}
-\item Maratona de Programação (ICPC): Medalha de Bronze em Chapecó (2023-2024), Medalha de Bronze em Passo Fundo (2024-2025), Medalha de Prata em Chapecó (2025-2026), e Medalha de Ouro em Pinhalzinho (2026-2027)
-\item Desbravalley Chapecó: 1º lugar (2023-2024), 3º lugar (2024-2025) e 2º lugar (2025-2026)
+\item Maratona de Programação (ICPC): medalha de bronze em Chapecó (2023--2024), medalha de bronze em Passo Fundo (2024--2025), medalha de prata em Chapecó (2025--2026) e medalha de ouro em Pinhalzinho (2026--2027).
+\item Desbravalley Chapecó: 1º lugar (2023), 3º lugar (2024) e 2º lugar (2025).
 \end{resume_list}
 
-
-\headingBf{Monitoria}{Ago 2025 - Dec 2025}
+\headingBf{Monitoria}{Ago 2025 -- Dez 2025}
 \begin{resume_list}
 \item Algoritmos de Programação (2025.2)
-\item Estrutura de Dados (2025.2)
+\item Estruturas de Dados (2025.2)
 \end{resume_list}
 
 %-----------%
 % Education %
 %-----------%
+
 \section{Formação Acadêmica}
-\headingBf{Universidade Federal da Fronteira Sul}{2021 - 2026}
-\headingIt{Estudante em Ciências da Computação, último semestre}{}
-%----------------------------%
-% Extracurricular Activities %
-%----------------------------%
+
+\headingBf{Universidade Federal da Fronteira Sul}{2021 -- 2026}
+\headingIt{Bacharelado em Ciência da Computação -- último semestre}{}
+
+%-----------------%
+% Recent Projects %
+%-----------------%
+
 \section{Projetos Recentes}
-\headingBf{Rumqttc-next}{\textcolor{blue}{\href{https://github.com/thehouseisonfire/rumqtt/}{Link}{}}}
+
+\headingBf{Rumqttc-next}{
+\textcolor{blue}{
+\href{https://github.com/thehouseisonfire/rumqtt/}{Link}
+}
+}
 \begin{resume_list}
-\item Biblioteca de Cliente MQTT completa, baseado em um fork após a empresa original cessar o desenvolvimento aberto
-\item Escrito em Rust, usando o runtime Tokio e Flume para comunicação MPSC
-\item Altamente popular, com centenas de milhares de downloads
+\item Biblioteca cliente MQTT completa, baseada em um fork criado após a empresa original cessar o desenvolvimento aberto do projeto.
+\item Escrita em Rust, utilizando o runtime Tokio e Flume para comunicação MPSC.
+\item Projeto amplamente utilizado, com centenas de milhares de downloads.
 \end{resume_list}
 
-\headingBf{Grok \& Z.ai Scraper}{\textcolor{blue}{\href{https://github.com/thehouseisonfire/grok-scraper}{Link}{}}
-{\href{https://github.com/thehouseisonfire/zai-scraper}{Link}{}}}
+\headingBf{Grok \& Z.ai Scraper}{
+\textcolor{blue}{
+\href{https://github.com/thehouseisonfire/grok-scraper}{Grok} /
+\href{https://github.com/thehouseisonfire/zai-scraper}{Z.ai}
+}
+}
 \begin{resume_list}
-\item Scrapers de site simples para grok.com e chat.z.ai
-\item Desenvolvidos em Python e migrados para Typescript
+\item Scrapers simples para os sites grok.com e chat.z.ai.
+\item Desenvolvidos originalmente em Python e posteriormente migrados para TypeScript.
 \end{resume_list}
 
-\headingBf{Image Tagger}{\textcolor{blue}{\href{https://github.com/thehouseisonfire/image-tagger}{Link}{}}}
+\headingBf{Image Tagger}{
+\textcolor{blue}{
+\href{https://github.com/thehouseisonfire/image-tagger}{Link}
+}
+}
 \begin{resume_list}
-\item Ferramenta para gerar lista de tags para uma imagem, podendo utilizar quatro modelos de visão
-\item Desenvolvida em Python e migrada para TypeScript
+\item Ferramenta para gerar listas de tags a partir de uma imagem, com suporte a quatro modelos de visão computacional.
+\item Desenvolvida originalmente em Python e posteriormente migrada para TypeScript.
 \end{resume_list}
 
 \end{document}
