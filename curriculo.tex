@@ -1,20 +1,5 @@
-%%%%% MTecknology's Resume
-%%%%
-% Author: Michael Lustfield
-% License: CC-BY-4
-% - https://creativecommons.org/licenses/by/4.0/legalcode.txt
-%%%%
-
 \documentclass[a4paper,10pt]{article}
 
-%%%%%%%%%%%%%%%%%%%%%%%
-%% BEGIN_FILE: mteck.sty
-%% NOTE: Everything between here and END_FILE can
-%% be relocated to "mteck.sty" and then included with:
-% \usepackage{mteck}
-
-% Dependencies
-% NOTE: Some packages (lastpage, hyperref) require second build!
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{enumitem}
@@ -185,10 +170,10 @@
 }
 
 %--------%
-% Perfil %
+% Sobre  %
 %--------%
 
-\tinysection{Quem Sou Eu}
+\tinysection{Sobre}
 Desenvolvedor Full Stack, mantenedor de projetos Open Source, estudante de Ciência da Computação e programador competitivo.
 
 %--------%
@@ -203,7 +188,7 @@ Desenvolvedor Full Stack, mantenedor de projetos Open Source, estudante de Ciên
 \item[\textbf{Linguagens}] Rust, JavaScript/TypeScript, C++, Python, SQL, Bash
 \item[\textbf{Frameworks}] React, Next.js, TanStack, Vue.js, Nuxt
 \item[\textbf{Sistemas Operacionais}] Arch Linux, Ubuntu, Linux Mint
-\item[\textbf{Ferramentas}] Git, GitHub CI/CD, Docker, Docker Compose, Supabase, Firebase, Vim
+\item[\textbf{Ferramentas}] Git, GitHub Actions, Docker, Docker Compose, Supabase, Firebase, Vim
 \end{itemize}
 % \end{multicols}
 
@@ -213,9 +198,11 @@ Desenvolvedor Full Stack, mantenedor de projetos Open Source, estudante de Ciên
 
 \section{Experiência}
 
+
 \headingBf{Desenvolvedor Júnior -- Difrisul Distribuidora Chapecó}{Fev 2025 -- Jul 2026}
 \begin{resume_list}
-\item Desenvolvi uma aplicação de e-commerce para a distribuidora utilizando Next.js, Supabase, Medusa.js, shadcn/ui, Tailwind CSS v4 e a SDK do Mercado Pago. Também iniciei o desenvolvimento de um aplicativo mobile integrado à plataforma.
+\item Projetei e desenvolvi um ERP para uso na operação interna da empresa, abrangendo compra e venda de produtos, simulação e geração de tabelas de preços, gerenciamento de rotas, clientes e funcionários, calendário e planejamento de rotas, gestão e histórico de comprovantes de entrega e devoluções, relatórios operacionais e KPIs, API externa para integração de sistemas, portais para fornecedores e quadro Kanban para gerenciamento de pedidos.
+\item Desenvolvi uma aplicação de e-commerce para a distribuidora utilizando Next.js, Supabase, Medusa.js, shadcn/ui, Tailwind CSS v4 e o SDK do Mercado Pago. Também iniciei o desenvolvimento de um aplicativo mobile integrado à plataforma.
 \item Desenvolvi um script em Python para junção de rotas a partir de arquivos Excel, com geração de executável para Windows.
 \item Desenvolvi um script em Python para filtragem e validação de números de telefone a partir de arquivos Excel, com geração de executável para Windows.
 \end{resume_list}
@@ -225,7 +212,8 @@ Desenvolvedor Full Stack, mantenedor de projetos Open Source, estudante de Ciên
 \item Desenvolvi atualizações para o site da empresa em produção, renovando seu estilo e conteúdo.
 \item Atualizei toda a stack do site, incluindo a migração de Vue 2 para Nuxt 3.
 \item Desenvolvi um novo site do zero utilizando Tailwind CSS e Nuxt 3.
-\item Implementei diversas funcionalidades, correções e políticas para a ferramenta interna de cálculo e geração de contratos da empresa. Entre elas, persistência de dados entre telas, cálculo inverso a partir de um valor final, validação de dados, engenharia reversa de artefatos do software CAD PROMOB e extração de dados diretamente do XML resultante, suporte ao cálculo de múltiplos ambientes por contrato, otimização de aproximadamente 10x na criação de contratos, concatenação de PDFs e correção de diversos bugs e erros lógicos.
+\item Implementei diversas funcionalidades e regras de negócio para a ferramenta interna de cálculo e geração de contratos, incluindo persistência de dados entre telas, cálculo inverso a partir do valor final, validação de dados e suporte a múltiplos ambientes por contrato.
+\item Realizei engenharia reversa de artefatos gerados pelo software CAD PROMOB para extração direta de dados do XML, além de implementar concatenação de PDFs, corrigir diversos erros lógicos e obter uma melhoria de aproximadamente 10x no tempo de criação de contratos.
 \item Atualizei toda a stack da ferramenta interna, incluindo a migração de Vue 2 para Nuxt 3, uma nova versão do Vuetify e atualizações das bibliotecas de desenvolvimento do Firebase.
 \end{resume_list}
 
@@ -268,9 +256,9 @@ Desenvolvedor Full Stack, mantenedor de projetos Open Source, estudante de Ciên
 }
 }
 \begin{resume_list}
-\item Biblioteca cliente MQTT completa, baseada em um fork criado após a empresa original cessar o desenvolvimento aberto do projeto.
+\item Biblioteca completa de cliente MQTT, baseada em um fork criado após a empresa original cessar o desenvolvimento aberto do projeto.
 \item Escrita em Rust, utilizando o runtime Tokio e Flume para comunicação MPSC.
-\item Projeto amplamente utilizado, com centenas de milhares de downloads.
+\item Projeto amplamente utilizado, com mais de 250 mil downloads.
 \end{resume_list}
 
 \headingBf{Grok \& Z.ai Scraper}{
